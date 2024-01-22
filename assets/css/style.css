@@ -1,0 +1,237 @@
+:root {
+  --primary-nutmeg: hsl(14, 45%, 36%);
+  --primary-dark-raspberry: hsl(332, 51%, 32%);
+
+  --white: hsl(0, 0%, 100%);
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --light-grey: hsl(30, 18%, 87%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+
+  --font-outfit: "outfit", "Open Sans", "Helvetica Neue", sans-serif;
+  --font-young-serif: "Young Serif", Georgia, "Times New Roman", Times, serif;
+
+  --padding-3xl: 100px;
+  --padding-2xl: 48px;
+  --padding-xl: 32px;
+  --padding-lg: 24px;
+  --padding-bs: 18px;
+  --padding-sm: 12px;
+
+  --gap-xl: 32px;
+  --gap-lg: 24px;
+  --gap-bs: 12px;
+
+  --border-radius-lg: 28px;
+  --border-radius-bs: 16px;
+
+  --font-size-3xl: 2.875em;
+  --font-size-2xl: 2em;
+  --font-size-xl: 1.75em;
+  --font-size-lg: 1.375em;
+  --font-size-bs: 1.125em;
+  --font-size-sm: 1em;
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src: url("../fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: "outfit";
+  src: url("../fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--eggshell);
+  color: var(--wenge-brown);
+  font-family: var(--font-outfit);
+  padding: var(--padding-3xl);
+}
+
+body .main-content {
+  margin: auto;
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  max-width: 856px;
+}
+
+h1,
+h2 {
+  font-family: var(--font-young-serif);
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+  color: var(--dark-charcoal);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--primary-nutmeg);
+}
+
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-bs);
+}
+
+li {
+  list-style-position: outside;
+  margin-inline-start: 28px;
+  padding-inline-start: var(--padding-bs);
+}
+
+li::marker {
+  font-weight: bold;
+  color: var(--primary-nutmeg);
+}
+
+p,
+li,
+footer {
+  font-family: var(--font-outfit);
+  font-size: var(--font-size-bs);
+  color: var(--wenge-brown);
+}
+
+b {
+  font-weight: 600;
+}
+
+hr.solid {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--light-grey);
+}
+
+.recipe-image {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-2xl) var(--padding-2xl) 0;
+}
+
+.recipe-image img {
+  border-radius: var(--border-radius-bs);
+}
+
+.recipe-article {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-2xl);
+  gap: var(--gap-xl);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-bs);
+  padding: var(--padding-lg) var(--padding-xl);
+  background-color: var(--rose-white);
+  border-radius: var(--border-radius-bs);
+}
+
+.recipe-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--primary-dark-raspberry);
+}
+
+.recipe-card ul li::marker {
+  color: var(--primary-dark-raspberry);
+}
+
+.table-nutrition {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-nutrition tr:not(:last-child) {
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.table-nutrition th,
+.table-nutrition td {
+  padding: var(--padding-bs) var(--padding-xl);
+  font-size: var(--font-size-bs);
+  font-weight: normal;
+  text-align: start;
+}
+
+.table-nutrition td {
+  color: var(--primary-nutmeg);
+  font-weight: 600;
+}
+
+.attribution {
+  text-align: center;
+  padding: var(--padding-lg) 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: white;
+    padding: 0;
+  }
+
+  body .main-content {
+    border-radius: inherit;
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  p,
+  li,
+  footer {
+    font-size: var(--font-size-sm);
+  }
+
+  .recipe-image {
+    padding: 0;
+  }
+
+  .recipe-image img {
+    border-radius: inherit;
+  }
+
+  .recipe-article {
+    padding: var(--padding-lg);
+  }
+
+  .recipe-card-title {
+    font-size: var(--font-size-bs);
+  }
+
+  .table-nutrition th,
+  .table-nutrition td {
+    font-size: var(--font-size-sm);
+  }
+
+  .attribution {
+    background-color: var(--white);
+  }
+}
